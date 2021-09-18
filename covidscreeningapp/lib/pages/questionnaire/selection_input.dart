@@ -1,18 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SelectionInput extends StatelessWidget {
+class SelectionInput extends StatefulWidget {
   final List<String> options;
   final String heading;
-  final String question;
+  final String description;
   final Color optionColour;
   final Color headerColour;
+  final int selected;
+  final Function onTap;
 
-  int _selected;
-  Function onTap;
+  const SelectionInput(
+      {required this.options,
+      required this.heading,
+      required this.description,
+      required this.selected,
+      required this.optionColour,
+      required this.headerColour,
+      required this.onTap});
 
-  SelectionInput(this.options, this.heading, this.question, this._selected,
-      this.optionColour, this.headerColour, this.onTap);
+  @override
+  State<SelectionInput> createState() => _SelectionInputState(
+        options: options,
+        heading: heading,
+        description: description,
+        selected: selected,
+        optionColour: optionColour,
+        headerColour: headerColour,
+        onTap: onTap,
+      );
+}
+
+class _SelectionInputState extends State<SelectionInput> {
+  final List<String> options;
+  final String heading;
+  final String description;
+  final Color optionColour;
+  final Color headerColour;
+  final int selected;
+  final Function onTap;
+
+  _SelectionInputState({
+    required this.options,
+    this.heading = '',
+    this.description = '',
+    this.selected = 0,
+    this.optionColour = Colors.blue,
+    this.headerColour = Colors.white,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +80,7 @@ class SelectionInput extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(left: 20, right: 20),
                 child: Text(
-                  question,
+                  description,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.montserrat(
                     textStyle: TextStyle(fontSize: 16, color: Colors.grey[400]),
@@ -63,7 +99,7 @@ class SelectionInput extends StatelessWidget {
                     child: Card(
                       margin: EdgeInsets.only(left: 45, right: 45, top: 10),
 
-                      color: i == _selected ? optionColour : Colors.white,
+                      color: i == selected ? optionColour : Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                           side: BorderSide(color: Colors.black, width: 3)),

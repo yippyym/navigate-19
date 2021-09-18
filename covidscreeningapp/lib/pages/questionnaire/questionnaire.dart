@@ -9,24 +9,19 @@ class ScreeningQuestionnaire extends StatefulWidget {
 }
 
 class _ScreeningQuestionnaire extends State<ScreeningQuestionnaire> {
-  List<String> options = ["yes", "no"];
-  String heading = "In the last 14 days, have you travelled outside of Canada?";
-  String question =
-      " If travel was only for a cross-border custody arrangement, select “No.”";
-  int _selected = -1;
-  Color optionColour = Colors.red;
-  Color headerColour = Colors.black;
-
-  Function onTap(i) {
-    return () => {
-          setState(() {
-            _selected = i;
-          })
-        };
-  }
+  // Function onTap(i) {
+  //   return () => {
+  //         setState(() {
+  //           selected = i;
+  //         })
+  //       };
+  // }
 
   @override
   Widget build(BuildContext context) {
+    int firstSelection = 0;
+    int secondSelection = 0;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -47,12 +42,40 @@ class _ScreeningQuestionnaire extends State<ScreeningQuestionnaire> {
             // first question
             Container(
               height: 300,
-              child: SelectionInput(options, heading, question, _selected,
-                  optionColour, headerColour, onTap),
+              child: SelectionInput(
+                options: ['yes', 'no'],
+                heading: 'Hello',
+                description: 'Okay hi',
+                selected: firstSelection,
+                optionColour: Colors.blue,
+                headerColour: Colors.black,
+                onTap: (i) {
+                  return () => {
+                        setState(() {
+                          firstSelection = i;
+                        })
+                      };
+                },
+              ),
             ),
 
-            //TODO - leave space for other questions
-            SizedBox(height: 500),
+            // second question
+            Container(
+                height: 300,
+                child: SelectionInput(
+                    options: ['yes', 'no'],
+                    heading: 'Bye',
+                    description: 'Okay bye',
+                    selected: secondSelection,
+                    optionColour: Colors.blue,
+                    headerColour: Colors.black,
+                    onTap: (i) {
+                      return () => {
+                            setState(() {
+                              secondSelection = i;
+                            })
+                          };
+                    })),
 
             // submit button
             Container(
@@ -66,7 +89,7 @@ class _ScreeningQuestionnaire extends State<ScreeningQuestionnaire> {
                       side: BorderSide(color: Colors.black, width: 3)),
                   primary: Colors.white,
                 ),
-                //TODO: lead to qr code or something
+                //TODO lead to qr code/check thing
                 onPressed: () {
                   Navigator.push(
                     context,
