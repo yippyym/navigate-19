@@ -1,6 +1,7 @@
 import 'package:covidscreeningapp/pages/questionnaire/questionnaire.dart';
 import 'package:covidscreeningapp/pages/screening%20result/fail.dart';
 import 'package:covidscreeningapp/pages/screening%20result/pass.dart';
+import 'package:covidscreeningapp/style.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,10 +22,8 @@ class _ProfilePageState extends State<ProfilePage> {
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(bottom: 50),
-              child: Text(
-                'STUDENT NAME',
-                style: GoogleFonts.oswald(textStyle: TextStyle(fontSize: 40)),
-              ),
+              child: Text('STUDENT NAME',
+                  style: Navigate19TextStyle.oswaldHeading()),
             ),
 
             // screening result
@@ -32,26 +31,16 @@ class _ProfilePageState extends State<ProfilePage> {
               height: 63,
               width: 268,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(10.0),
-                      side: BorderSide(color: Colors.black, width: 3)),
-                  primary: Colors.white,
-                ),
+                style: Navigate19ButtonStyle.blackOutlineButton(),
                 onPressed: () {
                   Navigator.push(
                     context,
                     //TODO lead to qr code/check thing
-                    MaterialPageRoute(
-                      builder: (context) => ScreeningFail(),
-                    ),
+                    MaterialPageRoute(builder: (context) => ScreeningFail()),
                   );
                 },
-                child: Text(
-                  'daily screening result',
-                  style: GoogleFonts.oswald(
-                      textStyle: TextStyle(fontSize: 24, color: Colors.black)),
-                ),
+                child: Text('daily screening result',
+                    style: Navigate19TextStyle.oswaldButton()),
               ),
             ),
 
@@ -61,12 +50,7 @@ class _ProfilePageState extends State<ProfilePage> {
               height: 63,
               width: 268,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(10.0),
-                      side: BorderSide(color: Colors.black, width: 3)),
-                  primary: Colors.white,
-                ),
+                style: Navigate19ButtonStyle.blackOutlineButton(),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -76,11 +60,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   );
                 },
-                child: Text(
-                  'exposure risk',
-                  style: GoogleFonts.oswald(
-                      textStyle: TextStyle(fontSize: 24, color: Colors.black)),
-                ),
+                child: Text('exposure risk',
+                    style: Navigate19TextStyle.oswaldButton()),
               ),
             ),
 
@@ -89,12 +70,7 @@ class _ProfilePageState extends State<ProfilePage> {
               height: 63,
               width: 268,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(10.0),
-                      side: BorderSide(color: Colors.black, width: 3)),
-                  primary: Colors.white,
-                ),
+                style: Navigate19ButtonStyle.blackOutlineButton(),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -103,11 +79,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   );
                 },
-                child: Text(
-                  'start screening',
-                  style: GoogleFonts.oswald(
-                      textStyle: TextStyle(fontSize: 24, color: Colors.black)),
-                ),
+                child: Text('start screening',
+                    style: Navigate19TextStyle.oswaldButton()),
               ),
             ),
           ],

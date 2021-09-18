@@ -1,4 +1,5 @@
 import 'package:covidscreeningapp/pages/questionnaire/selection_input.dart';
+import 'package:covidscreeningapp/style.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,7 +36,7 @@ class _ScreeningQuestionnaire extends State<ScreeningQuestionnaire> {
               child: Text(
                 'COVID-19 \nSCREENING',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.oswald(textStyle: TextStyle(fontSize: 40)),
+                style: Navigate19TextStyle.oswaldHeading(),
               ),
             ),
 
@@ -63,19 +64,20 @@ class _ScreeningQuestionnaire extends State<ScreeningQuestionnaire> {
             Container(
                 height: 300,
                 child: SelectionInput(
-                    options: ['yes', 'no'],
-                    heading: 'Bye',
-                    description: 'Okay bye',
-                    selected: secondSelection,
-                    optionColour: Colors.blue,
-                    headerColour: Colors.black,
-                    onTap: (i) {
-                      return () => {
-                            setState(() {
-                              secondSelection = i;
-                            })
-                          };
-                    })),
+                  options: ['yes', 'no'],
+                  heading: 'Bye',
+                  description: 'Okay bye',
+                  selected: secondSelection,
+                  optionColour: Colors.blue,
+                  headerColour: Colors.black,
+                  onTap: (i) {
+                    return () => {
+                          setState(() {
+                            secondSelection = i;
+                          })
+                        };
+                  },
+                )),
 
             // submit button
             Container(
@@ -83,12 +85,7 @@ class _ScreeningQuestionnaire extends State<ScreeningQuestionnaire> {
               width: 268,
               margin: EdgeInsets.only(top: 50, bottom: 50),
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(10.0),
-                      side: BorderSide(color: Colors.black, width: 3)),
-                  primary: Colors.white,
-                ),
+                style: Navigate19ButtonStyle.blackOutlineButton(),
                 //TODO lead to qr code/check thing
                 onPressed: () {
                   Navigator.push(
@@ -98,11 +95,8 @@ class _ScreeningQuestionnaire extends State<ScreeningQuestionnaire> {
                     ),
                   );
                 },
-                child: Text(
-                  'submit',
-                  style: GoogleFonts.oswald(
-                      textStyle: TextStyle(fontSize: 24, color: Colors.black)),
-                ),
+                child:
+                    Text('submit', style: Navigate19TextStyle.oswaldButton()),
               ),
             )
           ],

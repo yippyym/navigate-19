@@ -77,3 +77,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Oswald
+      fonts:
+      - asset: assets/fonts/oswald/Oswald-Regular.ttf
+        weight: 400
+    - family: Montserrat
+      fonts:
+      - asset: assets/fonts/montserrat/Montserrat-Regular.ttf
+        weight: 400
+      - asset: assets/fonts/montserrat/Montserrat-Bold.ttf
+        weight: 700
+      

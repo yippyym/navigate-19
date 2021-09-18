@@ -33,6 +33,7 @@ class _NavBarState extends State<NavBar> {
     });
   }
 
+  // nav bar options
   static const List<Widget> _widgetOptions = <Widget>[
     Homepage(),
     ProfilePage(),

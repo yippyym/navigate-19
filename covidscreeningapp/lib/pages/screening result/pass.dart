@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:covidscreeningapp/pages/profile.dart';
+import 'package:covidscreeningapp/style.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -22,10 +23,11 @@ class _ScreeningPassState extends State<ScreeningPass> {
             // heading
             Container(
               margin: EdgeInsets.only(top: 50, bottom: 12),
-              child: Text('COVID-19 \nSCREENING RESULT',
-                  textAlign: TextAlign.center,
-                  style:
-                      GoogleFonts.oswald(textStyle: TextStyle(fontSize: 40))),
+              child: Text(
+                'COVID-19 \nSCREENING RESULT',
+                textAlign: TextAlign.center,
+                style: Navigate19TextStyle.oswaldHeading(),
+              ),
             ),
 
             // light green pass
@@ -46,11 +48,7 @@ class _ScreeningPassState extends State<ScreeningPass> {
                   child: Text(
                     'VALID ON $now',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.montserrat(
-                        textStyle: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    )),
+                    style: Navigate19TextStyle.montserratDescBold(),
                   ),
                 ),
                 Container(
@@ -66,9 +64,7 @@ class _ScreeningPassState extends State<ScreeningPass> {
               margin: EdgeInsets.only(top: 15),
               child: Text(
                 'GO to school.',
-                style: GoogleFonts.montserrat(
-                    textStyle:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                style: Navigate19TextStyle.montserratDescBold(),
               ),
             ),
 
@@ -78,8 +74,7 @@ class _ScreeningPassState extends State<ScreeningPass> {
               child: Text(
                 'Retake this screening every day before going to school.',
                 textAlign: TextAlign.center,
-                style:
-                    GoogleFonts.montserrat(textStyle: TextStyle(fontSize: 16)),
+                style: Navigate19TextStyle.montserratDesc(),
               ),
             ),
 
@@ -88,9 +83,7 @@ class _ScreeningPassState extends State<ScreeningPass> {
               child: Text(
                 ' If you feel sick or not well (not related to getting a COVID-19 vaccine in the last 48 hours), please stay home. Talk with a doctor if necessary.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.montserrat(
-                  textStyle: TextStyle(fontSize: 16, color: Colors.grey[400]),
-                ),
+                style: Navigate19TextStyle.montserratDescGrey(),
               ),
             ),
 
@@ -100,12 +93,7 @@ class _ScreeningPassState extends State<ScreeningPass> {
               height: 63,
               width: 268,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(10.0),
-                      side: BorderSide(color: Colors.black, width: 3)),
-                  primary: Colors.white,
-                ),
+                style: Navigate19ButtonStyle.blackOutlineButton(),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -116,8 +104,7 @@ class _ScreeningPassState extends State<ScreeningPass> {
                 },
                 child: Text(
                   'back to profile',
-                  style: GoogleFonts.oswald(
-                      textStyle: TextStyle(fontSize: 24, color: Colors.black)),
+                  style: Navigate19TextStyle.oswaldButton(),
                 ),
               ),
             ),
