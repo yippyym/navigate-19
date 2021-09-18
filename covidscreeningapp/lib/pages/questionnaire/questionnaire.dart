@@ -1,4 +1,4 @@
-import 'package:covidscreeningapp/questionnaire/radio_button.dart';
+import 'package:covidscreeningapp/pages/questionnaire/radio_button.dart';
 import 'package:flutter/material.dart';
 
 //iPhone 8 - 37
@@ -21,19 +21,21 @@ class _ScreeningQuestionnaire extends State<ScreeningQuestionnaire> {
       backgroundColor: Colors.white,
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
+            SizedBox(height: 60),
             Text(
-              'Question test',
+              'COVID-19 \nSCREENING',
               textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 40),
             ),
             SizedBox(
               height: 300,
-              child: RadioButton(Colors.black, '', _titles, (value) {
+              child: RadioButton(Colors.black, 'question', _titles, (value) {
                 setState(() {
                   _selectedValue = value;
                 });
-              }, _selectedValue, 0, 22, false, 0),
+              }, _selectedValue, 24, 16, false, 0),
             ),
           ],
         ),

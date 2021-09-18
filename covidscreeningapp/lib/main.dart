@@ -1,4 +1,4 @@
-import 'package:covidscreeningapp/questionnaire/questionnaire.dart';
+import 'package:covidscreeningapp/pages/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,7 +9,7 @@ class CovidScreeningApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ScreeningQuestionnaire(),
+      home: Homepage(),
       debugShowCheckedModeBanner: false,
     );
   }
