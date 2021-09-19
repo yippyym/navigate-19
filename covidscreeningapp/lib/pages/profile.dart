@@ -1,4 +1,5 @@
 import 'package:covidscreeningapp/model/model.dart';
+import 'package:covidscreeningapp/pages/google_maps.dart';
 import 'package:covidscreeningapp/pages/questionnaire/questionnaire.dart';
 import 'package:covidscreeningapp/pages/screening%20result/fail.dart';
 import 'package:covidscreeningapp/pages/screening%20result/pass.dart';
@@ -76,7 +77,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     context,
                     //TODO lead to maps/contact tracing
                     MaterialPageRoute(
-                      builder: (context) => ScreeningQuestionnaire(),
+                      builder: (context) => GoogleMaps(),
                     ),
                   );
                 },
