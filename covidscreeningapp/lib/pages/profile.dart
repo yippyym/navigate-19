@@ -1,10 +1,9 @@
-import 'package:covidscreeningapp/pages/homepage.dart';
+import 'package:covidscreeningapp/model/model.dart';
 import 'package:covidscreeningapp/pages/questionnaire/questionnaire.dart';
 import 'package:covidscreeningapp/pages/screening%20result/fail.dart';
 import 'package:covidscreeningapp/pages/screening%20result/pass.dart';
 import 'package:covidscreeningapp/style.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -16,6 +15,8 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
+    Navigate19Model navigate19model = Navigate19Model();
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -34,11 +35,29 @@ class _ProfilePageState extends State<ProfilePage> {
               child: ElevatedButton(
                 style: Navigate19ButtonStyle.blackOutlineButton(),
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    //TODO lead to qr code/check thing
-                    MaterialPageRoute(builder: (context) => ScreeningFail()),
-                  );
+                  if (navigate19model.selected1 == 1 &&
+                      navigate19model.selected2 == 1 &&
+                      navigate19model.selected3 == 1 &&
+                      navigate19model.selected4 == 1) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ScreeningPass(),
+                      ),
+                    );
+                  } else {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ScreeningFail(),
+                      ),
+                    );
+                  }
+                  // Navigator.push(
+                  //   context,
+                  //   //TODO lead to qr code/check thing
+                  //   MaterialPageRoute(builder: (context) => ScreeningFail()),
+                  // );
                 },
                 child: Text('daily screening result',
                     style: Navigate19TextStyle.oswaldButton()),
