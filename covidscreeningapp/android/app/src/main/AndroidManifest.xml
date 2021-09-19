@@ -3,6 +3,11 @@
    <application
         android:label="covidscreeningapp"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+          android:value="AIzaSyD-B099gf7z1qUR2hkdfRjp_MMjgZNKYYs"
+        /> 
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
