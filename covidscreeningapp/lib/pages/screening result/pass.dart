@@ -1,8 +1,8 @@
 import 'dart:ui';
+import 'package:covidscreeningapp/main.dart';
 import 'package:covidscreeningapp/pages/profile.dart';
 import 'package:covidscreeningapp/style.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ScreeningPass extends StatefulWidget {
   @override
@@ -35,6 +35,7 @@ class _ScreeningPassState extends State<ScreeningPass> {
               alignment: AlignmentDirectional.topStart,
               children: <Widget>[
                 Container(
+                  margin: EdgeInsets.only(left: 20, right: 20),
                   height: 200,
                   width: 320,
                   decoration: BoxDecoration(
@@ -45,6 +46,7 @@ class _ScreeningPassState extends State<ScreeningPass> {
                   alignment: AlignmentDirectional.bottomCenter,
                   height: 170,
                   width: 320,
+                  margin: EdgeInsets.only(left: 40, right: 40),
                   child: Text(
                     'VALID ON $now',
                     textAlign: TextAlign.center,
@@ -52,6 +54,7 @@ class _ScreeningPassState extends State<ScreeningPass> {
                   ),
                 ),
                 Container(
+                  margin: EdgeInsets.only(left: 20, right: 20),
                   height: 140,
                   width: 320,
                   child: Image.asset('assets/images/pass.png'),
@@ -61,7 +64,7 @@ class _ScreeningPassState extends State<ScreeningPass> {
 
             // go to school
             Container(
-              margin: EdgeInsets.only(top: 15),
+              margin: EdgeInsets.only(top: 20),
               child: Text(
                 'GO to school.',
                 style: Navigate19TextStyle.montserratDescBold(),
@@ -98,7 +101,7 @@ class _ScreeningPassState extends State<ScreeningPass> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProfilePage(),
+                      builder: (context) => NavBar(),
                     ),
                   );
                 },

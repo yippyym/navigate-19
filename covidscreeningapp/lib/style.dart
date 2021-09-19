@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 //reusable colours
 Color customGrey = const Color.fromRGBO(166, 166, 166, 1);
+Color customPeach = const Color.fromRGBO(255, 220, 193, 1);
 
 //resuable text decoration
 class Navigate19TextStyle {

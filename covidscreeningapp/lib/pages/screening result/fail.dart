@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:covidscreeningapp/main.dart';
 import 'package:covidscreeningapp/pages/profile.dart';
 import 'package:covidscreeningapp/style.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,7 @@ class _ScreeningFailState extends State<ScreeningFail> {
 
               // go to school
               Container(
-                margin: EdgeInsets.only(top: 15),
+                margin: EdgeInsets.only(top: 20),
                 child: Text(
                   'DO NOT go to school.',
                   style: Navigate19TextStyle.montserratDescBold(),
@@ -96,7 +97,7 @@ class _ScreeningFailState extends State<ScreeningFail> {
               ),
 
               Container(
-                margin: EdgeInsets.only(right: 135, top: 25),
+                margin: EdgeInsets.only(right: 130, top: 25),
                 child: Text('Returning to school:',
                     textAlign: TextAlign.start,
                     style: Navigate19TextStyle.montserratDescBold()),
@@ -122,7 +123,7 @@ class _ScreeningFailState extends State<ScreeningFail> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ProfilePage(),
+                        builder: (context) => NavBar(),
                       ),
                     );
                   },

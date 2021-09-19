@@ -1,3 +1,4 @@
+import 'package:covidscreeningapp/pages/homepage.dart';
 import 'package:covidscreeningapp/pages/questionnaire/questionnaire.dart';
 import 'package:covidscreeningapp/pages/screening%20result/fail.dart';
 import 'package:covidscreeningapp/pages/screening%20result/pass.dart';
@@ -79,7 +80,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   );
                 },
-                child: Text('start screening',
+                child: Text('screening',
                     style: Navigate19TextStyle.oswaldButton()),
               ),
             ),
